@@ -7,17 +7,25 @@
   <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
 
     <div class="email">
-        <label for="email">Correo Electrónico</label>
+        <label for="email">Correo Electrónico <i class="fa fa-play check" *ngIf="registerForm.controls.email.valid &&
+                                                                                 registerForm.controls.email.dirty" ></i>
+                                              <i class="fa fa-stop uncheck" *ngIf="registerForm.controls.email.invalid &&
+                                                                                 registerForm.controls.email.touched" ></i>                                                                                   
+        </label>
         <input type="text" id="email" formControlName="email">
     </div>
 
     <div class="password">
-        <label for="password">Contraseña</label>
+        <label for="password">Contraseña <i class="fa fa-play check" *ngIf="registerForm.controls.password.valid &&
+                                                                            registerForm.controls.password.dirty" ></i>
+                                         <i class="fa fa-stop uncheck" *ngIf="registerForm.controls.password.invalid &&
+                                                                            registerForm.controls.password.touched" ></i>                                                                          
+        </label>
         <input type="text" id="password" formControlName="password">
     </div>
 
     <div class="cont-btn">
-      <button type="submit">REGISTRAR</button>
+      <button type="submit" [disabled]="!registerForm.valid">REGISTRAR</button>
     </div>
 
   </form>
