@@ -5,13 +5,13 @@ import { AuthService } from '../services/auth.service';
 import * as firebase from 'firebase';
 
 @Component({
-  selector: 'app-auth',
-  templateUrl: './auth.component.html',
-  styleUrls: ['./auth.component.css']
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css']
 })
-export class AuthComponent implements OnInit {
+export class LoginComponent implements OnInit {
 
-  registerForm: FormGroup;
+  loginForm: FormGroup;
   userdata: any;
 
   constructor(private formBuilder: FormBuilder,
@@ -20,7 +20,7 @@ export class AuthComponent implements OnInit {
               private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
-    this.registerForm = this.formBuilder.group({
+    this.loginForm = this.formBuilder.group({
       'email': ['', Validators.email],
       'password': ['', Validators.minLength(6)]
     })
@@ -28,14 +28,14 @@ export class AuthComponent implements OnInit {
 
   onSubmit(){
     this.userdata = this.saveRegister()
-    this.authService.RegisterUser(this.userdata)
-    this.router.navigate(['/name'])
-  } 
+    this.authService.LoginUser(this.userdata)
+    this.router.navigate(['/'])
+  }
 
   saveRegister(){
     let data = {
-      email: this.registerForm.get('email').value,
-      password: this.registerForm.get('password').value
+      email: this.loginForm.get('email').value,
+      password: this.loginForm.get('password').value
     }
 
     return data;

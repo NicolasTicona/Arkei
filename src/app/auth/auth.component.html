@@ -4,7 +4,10 @@
     <h1>Arkei</h1>
   </div>
 
+  <h2 class="subtitle">Registrarse</h2>
+
   <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
 
     <div class="email">
         <label for="email">Correo Electrónico <i class="fa fa-play check" *ngIf="registerForm.controls.email.valid &&
@@ -17,14 +20,15 @@
 
     <div class="password">
         <label for="password">Contraseña <i class="fa fa-play check" *ngIf="registerForm.controls.password.valid &&
-                                                                            registerForm.controls.password.dirty" ></i>
+                                                                            registerForm.controls.password.dirty  " ></i>
                                          <i class="fa fa-stop uncheck" *ngIf="registerForm.controls.password.invalid &&
                                                                             registerForm.controls.password.touched" ></i>                                                                          
         </label>
-        <input type="text" id="password" formControlName="password">
+        <input type="password" id="password" formControlName="password">
     </div>
 
     <div class="cont-btn">
+      <p>Si dispones de una cuenta <a routerLink="/login">Inicia sesión</a></p>
       <button type="submit" [disabled]="!registerForm.valid">REGISTRAR</button>
     </div>
 

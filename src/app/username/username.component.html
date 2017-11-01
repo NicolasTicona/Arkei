@@ -1,0 +1,11 @@
+<div class="container">
+
+  <form [formGroup]="dataForm" (ngSubmit)="onSubmit()" >
+
+    <label for="name">Usuario: </label>
+    <input type="text" id="name" formControlName="name" >
+
+    <button type="submit">Listo</button>
+
+  </form>
+</div>

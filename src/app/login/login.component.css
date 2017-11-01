@@ -61,13 +61,13 @@ form .cont-btn{
 }
 
 form .cont-btn button{
+    margin-top: 15px;
     padding: 8px 20px;
     border: none;
     background: #fff;
     color: #0059cf;
     font-weight: 700;
-    box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);
-    margin-top: 15px;
+    box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);;
 }
 
 .check{

@@ -10,10 +10,14 @@ import { PublicationsComponent } from './main/publications/publications.componen
 import { AuthComponent } from './auth/auth.component';
 
 import { AuthService } from './services/auth.service';
+import { LoginComponent } from './login/login.component';
+import { UsernameComponent } from './username/username.component';
 
 const routes: Routes = [
   {path: '', component: MainComponent },
   {path: 'auth', component: AuthComponent},
+  {path: 'login', component: LoginComponent},
+  {path: 'name', component: UsernameComponent},
   {path: '**', component: MainComponent}
   
 ]
@@ -25,6 +29,8 @@ const routes: Routes = [
     HeaderComponent,
     PublicationsComponent,
     AuthComponent,
+    LoginComponent,
+    UsernameComponent,
 
   ],
   imports: [

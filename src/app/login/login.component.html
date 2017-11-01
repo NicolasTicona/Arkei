@@ -1,0 +1,35 @@
+<div class="container">
+    
+      <div class="header-form">
+        <h1>Arkei</h1>
+      </div>
+
+      <h2 class="subtitle">Iniciar Sesión</h2>
+    
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    
+        <div class="email">
+            <label for="email">Correo Electrónico <i class="fa fa-play check" *ngIf="loginForm.controls.email.valid &&
+                                                                                     loginForm.controls.email.dirty" ></i>
+                                                  <i class="fa fa-stop uncheck" *ngIf="loginForm.controls.email.invalid &&
+                                                                                     loginForm.controls.email.touched" ></i>                                                                                   
+            </label>
+            <input type="text" id="email" formControlName="email">
+        </div>
+    
+        <div class="password">
+            <label for="password">Contraseña <i class="fa fa-play check" *ngIf="loginForm.controls.password.valid &&
+                                                                                loginForm.controls.password.dirty  " ></i>
+                                             <i class="fa fa-stop uncheck" *ngIf="loginForm.controls.password.invalid &&
+                                                                                loginForm.controls.password.touched" ></i>                                                                          
+            </label>
+            <input type="text" id="password" formControlName="password">
+        </div>
+    
+        <div class="cont-btn">
+          <p>Si aún no dispones de una cuenta <a routerLink="/auth" >Registrate</a></p>
+          <button type="submit" [disabled]="!loginForm.valid">INICIAR SESIÓN</button>
+        </div>
+    
+      </form>
+    </div>
