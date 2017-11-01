@@ -14,9 +14,7 @@ import * as firebase from 'firebase';
 export class PublicationsComponent implements OnInit {
 
   user: any = {
-    displayName: '',
-    email: '',
-    photoUrl: ''
+    'providerData': '',
   };
 
   constructor(private authService: AuthService,

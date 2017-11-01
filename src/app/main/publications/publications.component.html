@@ -1,6 +1,6 @@
 <div class="container-publications">
 
-  <p>HOLA {{user.displayName}}</p>
+  <p>HOLA {{user.providerData | json}}</p>
 
   <button (click)="loadData()">Load</button>
   <button (click)="CloseSession()" >Cerrar Sesión</button>
