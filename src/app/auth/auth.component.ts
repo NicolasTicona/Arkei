@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AuthService } from '../services/auth.service';
+import { LocalStorageService, ILocalStorageServiceConfig } from 'angular-2-local-storage';
 import * as firebase from 'firebase';
+import 'rxjs/Rx';
 
 @Component({
   selector: 'app-auth',
@@ -17,7 +19,8 @@ export class AuthComponent implements OnInit {
   constructor(private formBuilder: FormBuilder,
               private authService: AuthService,
               private router: Router,
-              private activatedRoute: ActivatedRoute) { }
+              private activatedRoute: ActivatedRoute,
+              private localStorageService: LocalStorageService) { }
 
   ngOnInit() {
     this.registerForm = this.formBuilder.group({

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
+import { LocalStorageService, ILocalStorageServiceConfig } from 'angular-2-local-storage';
 import { AuthService } from '../services/auth.service';
 import * as firebase from 'firebase';
 
@@ -17,7 +18,8 @@ export class LoginComponent implements OnInit {
   constructor(private formBuilder: FormBuilder,
               private authService: AuthService,
               private router: Router,
-              private activatedRoute: ActivatedRoute) { }
+              private activatedRoute: ActivatedRoute,
+              private localStorageService: LocalStorageService) { }
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({

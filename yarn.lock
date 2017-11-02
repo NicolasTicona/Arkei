@@ -337,6 +337,10 @@ amdefine@>=0.0.4:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/amdefine/-/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
 
+angular-2-local-storage@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/angular-2-local-storage/-/angular-2-local-storage-1.0.1.tgz#3b846c90b2fffc9124f7bacc347f22d043a1e3a4"
+
 angular-cli-ghpages@^0.5.1:
   version "0.5.1"
   resolved "https://registry.yarnpkg.com/angular-cli-ghpages/-/angular-cli-ghpages-0.5.1.tgz#acaeb9932bc6b29b5a34c7a885bfacd74c4d5524"

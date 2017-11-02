@@ -1,10 +1,14 @@
 import { Injectable } from '@angular/core';
+import { LocalStorageService, ILocalStorageServiceConfig } from 'angular-2-local-storage';
+import { Router, ActivatedRoute } from '@angular/router';
 import * as firebase from 'firebase';
 
 @Injectable()
 export class AuthService {
 
-  constructor() { }
+  constructor(private localStorageService: LocalStorageService,
+              private router: Router,
+              private activatedRoute: ActivatedRoute,) { }
 
   isUser(){
     let user = firebase.auth().currentUser;
@@ -29,6 +33,9 @@ export class AuthService {
 
   RegisterUser(userdata){
     firebase.auth().createUserWithEmailAndPassword(userdata.email,userdata.password)
+      .then(()=>{
+        this.router.navigate(['/'])
+      })
       .catch(err => {
         console.log(err)
     })
@@ -36,6 +43,9 @@ export class AuthService {
 
   LoginUser(userdata){
     firebase.auth().signInWithEmailAndPassword(userdata.email, userdata.password)
+    .then(()=>{
+      this.router.navigate(['/'])
+    })
     .catch(err => {
       console.log(err)
     })
@@ -49,6 +59,9 @@ export class AuthService {
       .catch((err) =>{
         console.log(err)
       })
+
+    this.localStorageService.clearAll();
+    this.router.navigate(['/auth']) 
   }
 
 }

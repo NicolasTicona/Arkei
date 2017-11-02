@@ -2,7 +2,6 @@
     width: 100%;
     max-width: 425px;
     margin: auto;
-    background: #f0f0f0;
-    border: 1px solid #ccc;
+    position: relative;
 }
 

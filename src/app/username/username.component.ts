@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
+import { LocalStorageService, ILocalStorageServiceConfig } from 'angular-2-local-storage';
 import{ AuthService } from '../services/auth.service';
 import * as firebase from 'firebase';
 
@@ -17,7 +18,8 @@ export class UsernameComponent implements OnInit {
   constructor(private authService: AuthService,
               private router: Router,
               private activateRoute: ActivatedRoute,
-              private formBuilder: FormBuilder) { }
+              private formBuilder: FormBuilder,
+              private localStorageService: LocalStorageService) { }
 
   ngOnInit() {
     this.dataForm = this.formBuilder.group({
