@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router, ActivatedRoute } from '@angular/router';
 import { PublicationsService } from '../services/publications.service';
 import * as firebase from 'firebase';
 
@@ -15,7 +16,10 @@ export class PublicationComponent implements OnInit {
 
   userdata: any;
 
-  constructor(private formBuilder: FormBuilder, private publicationsService: PublicationsService) { }
+  constructor(private formBuilder: FormBuilder,
+              private publicationsService: PublicationsService,
+              private router: Router, 
+              private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
     this.publicationForm = this.formBuilder.group({
@@ -29,6 +33,7 @@ export class PublicationComponent implements OnInit {
       .subscribe(newp =>{
 
       })
+    this.router.navigate(['/'])
   } 
 
   savePublication(){
