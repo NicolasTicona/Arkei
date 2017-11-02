@@ -43,3 +43,39 @@
     animation-duration: 2s;
     animation-iteration-count: infinite;
 }
+
+/* ====================================== */
+
+.publication{
+    width: 100%;
+    margin:auto;
+}
+
+.publication .p-username{
+    width: 100%;
+    font-family: 'Press Start 2P';
+    color: #006cfc;
+    margin-bottom: 15px;
+    font-size: 14px;    
+}
+
+.publication .p-text{
+    font-size: 14px;
+    color: #343434;
+    margin-bottom: 15px;
+}
+
+.publication .action{
+    width: 100%;
+    padding: 8px;
+    border-top: 1px solid rgba(197, 194, 194, 0.781);
+    text-align: right;
+}
+
+.action button{
+    border: none;
+    background: none;
+    margin: 0 20px;
+}
+
+.action button i{font-size: 20px}

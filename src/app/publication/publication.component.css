@@ -1,0 +1,80 @@
+
+.container{
+    width: 100%;
+    max-width: 425px;
+    margin: auto;
+}
+
+.header-publication{
+    padding: 10px;
+    background: #fc5162;
+}
+
+.header-publication a{
+    display: inline-block;
+    font-size: 23px;
+    color: #fff;
+}
+
+/* ============================= */
+
+.cont-textarea form{
+    width: 100%;
+    margin: 20px auto 0px auto;
+    text-align: center;
+}
+
+.cont-textarea form textarea{
+    width: 80%;
+    max-width: 80%;
+    height: 300px;
+    max-height: 300px;
+
+
+    border: 2px solid #2e86fc;    
+    border-bottom: none;
+    padding: 14px;
+    margin: auto;
+
+    vertical-align: top;
+    font-size: 16px;
+    outline: none;
+    line-height: 20px;
+    background: #fff;
+}
+
+.cont-textarea .cont-uploads_submit{
+    width: 100%;
+    background: #2e86fc;
+    color: #fff;
+    padding: 20px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.uploadmedia{
+    width: 60%;
+}
+
+.uploadmedia .image, .video{
+    font-size: 60px;
+    margin: 0px 15px;
+}
+
+.cont-btn{
+    width: 30%;
+    text-align: center;
+}
+
+.cont-btn button{
+    border: none;
+    background: none;
+}
+
+.cont-btn button i{
+    font-size: 60px;
+    color: #fff;
+}

@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router, ActivatedRoute } from '@angular/router';
-import { LocalStorageService, ILocalStorageServiceConfig } from 'angular-2-local-storage';
-import{ AuthService } from '../../services/auth.service';
+import { LocalStorageService} from 'angular-2-local-storage';
+import { AuthService } from '../../services/auth.service';
+import { PublicationsService } from '../../services/publications.service';
 
 import * as firebase from 'firebase';
 
@@ -13,23 +12,22 @@ import * as firebase from 'firebase';
 })
 export class PublicationsComponent implements OnInit {
 
-  user: any = {
-    'providerData': '',
-  };
+  publications: any = [];
 
   constructor(private authService: AuthService,
-              private router: Router,
-              private activatedRoute: ActivatedRoute,
+              private publicationsService: PublicationsService,
               private localStorageService: LocalStorageService) { }
 
   ngOnInit() {
+
+    this.publicationsService.getPublications()
+      .subscribe(publications =>{
+        for(const id in publications){
+          this.publications.unshift(publications[id]);
+        }
+      })
   }
 
-  // loadData(){
-  //   let status = firebase.auth().currentUser;
-  //   this.user = status;
-  //   console.log(status);
-  // }
 
   CloseSession(){
     this.authService.CloseSession()

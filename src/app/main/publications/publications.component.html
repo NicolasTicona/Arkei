@@ -1,7 +1,27 @@
 <div class="container-publications">
 
   <div class="btn-new-publication">
-    <a><i class="fa fa-hand-o-right"></i></a>
+    <a routerLink="/publication" ><i class="fa fa-hand-o-right"></i></a>
+  </div>
+
+  <div class="publication" *ngFor="let publication of publications" >
+
+    <div class="p-username">
+      {{publication.name}}
+    </div>
+
+    <div class="p-text">
+      {{publication.text}}
+    </div>
+
+    <div class="p-media">
+      
+    </div>
+
+    <div class="action">
+      <button><i class="fa fa-thumbs-o-up like"></i></button><button><i class="fa fa-thumbs-o-down dislike"></i></button>
+    </div>
+
   </div>
 
   <button (click)="CloseSession()" >Cerrar Sesión</button>

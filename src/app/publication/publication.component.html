@@ -1,0 +1,27 @@
+<div class="container">
+
+  <div class="header-publication">
+    <a routerLink="/" ><i class="fa fa-long-arrow-left"></i></a>
+  </div>
+
+  <div class="cont-textarea">
+    
+    <form [formGroup]="publicationForm" (ngSubmit)="onSubmit()" >
+      <textarea placeholder="¿Qué nos cuentas?" maxlength="240" formControlName="publication"></textarea>
+
+
+    <div class="cont-uploads_submit">
+      <div class="uploadmedia">
+        <i class="fa fa-image image"></i>
+        <i class="fa fa-image video"></i>
+      </div>
+      <div class="cont-btn">
+        <button type="submit"><i class="fa fa-check"></i></button>
+      </div>
+    </div>
+    
+  </form>
+
+  </div>
+
+</div>

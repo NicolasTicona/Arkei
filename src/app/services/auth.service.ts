@@ -33,21 +33,20 @@ export class AuthService {
 
   RegisterUser(userdata){
     firebase.auth().createUserWithEmailAndPassword(userdata.email,userdata.password)
-      .then(()=>{
-        this.router.navigate(['/'])
-      })
       .catch(err => {
         console.log(err)
+        this.router.navigate(['/auth'])
     })
   }
 
   LoginUser(userdata){
     firebase.auth().signInWithEmailAndPassword(userdata.email, userdata.password)
     .then(()=>{
-      this.router.navigate(['/'])
+      this.router.navigate(['/login'])
     })
     .catch(err => {
       console.log(err)
+      this.router.navigate(['/login'])
     })
   }
 
