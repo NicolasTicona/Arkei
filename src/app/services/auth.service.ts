@@ -42,7 +42,7 @@ export class AuthService {
   LoginUser(userdata){
     firebase.auth().signInWithEmailAndPassword(userdata.email, userdata.password)
     .then(()=>{
-      this.router.navigate(['/login'])
+      this.router.navigate(['/'])
     })
     .catch(err => {
       console.log(err)
