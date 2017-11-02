@@ -33,7 +33,6 @@ export class PublicationComponent implements OnInit {
       .subscribe(newp =>{
 
       })
-    this.router.navigate(['/'])
   } 
 
   savePublication(){
